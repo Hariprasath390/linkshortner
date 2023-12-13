@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [originalUrl, setOriginalUrl] = useState('');
-  const [shortUrl, setShortUrl] = useState('');
+  const [originalUrl, setOriginalUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await axios.post('http://localhost:5000/api/url', { originalUrl });
+      const response = await axios.post("http://localhost:5000/api/url", {
+        originalUrl,
+      });
       setShortUrl(response.data.shortUrl);
     } catch (error) {
       console.error(error);
@@ -30,21 +31,24 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>URL Shortener</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Original URL:
-          <input
-            type="url"
-            value={originalUrl}
-            onChange={(e) => setOriginalUrl(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Shorten URL</button>
-      </form>
-      {shortUrl && displayShortenedUrl()}
+    <div>
+      <div className="flex flex-col justify-center items-center ">
+        <h1 className="font-bold ">URL Shortener</h1>
+        <form onSubmit={handleSubmit}>
+          <label className="">
+            Original URL:
+            <input
+              type="url"
+              value={originalUrl}
+              onChange={(e) => setOriginalUrl(e.target.value)}
+              required
+              className="border border-black "
+            />
+          </label>
+          <button type="submit border border-blac ">Shorten URL</button>
+        </form>
+        {shortUrl && displayShortenedUrl()}
+      </div>
     </div>
   );
 }

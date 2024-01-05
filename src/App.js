@@ -21,8 +21,8 @@ function App() {
     const fullShortUrl = `http://localhost:5000/${shortUrl}`;
 
     return (
-      <div>
-        <p>Shortened URL:</p>
+      <div className="flex justify-center items-center p-12 gap-3 ">
+        <p className=" font-bold font-sans ">Shortened Url:</p>
         <a href={fullShortUrl} target="_blank" rel="noopener noreferrer">
           {fullShortUrl}
         </a>
@@ -32,23 +32,41 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center ">
-        <h1 className="font-bold ">URL Shortener</h1>
-        <form onSubmit={handleSubmit}>
-          <label className="">
-            Original URL:
+      <h1 className="font-bold text-center bg-[#676766] text-white font-sans  ">
+        URL Shortener
+      </h1>
+
+      <div className="flex flex-col justify-center items-center py-12 m-2 ">
+        <form
+          onSubmit={handleSubmit}
+          className="text-center sm:flex block justify-center gap-3 w-full sm:w-auto"
+        >
+          <div className="flex justify-center items-center">
+            <label
+              htmlFor="originalUrl"
+              className="font-semibold font-sans text-black/80 text-center"
+            >
+              Original URL:
+            </label>
             <input
               type="url"
+              id="originalUrl"
               value={originalUrl}
               onChange={(e) => setOriginalUrl(e.target.value)}
               required
-              className="border border-black "
+              className="border border-black p-3 lg:w-[800px] md:w-[500px] sm:w-[300px] w-full"
             />
-          </label>
-          <button type="submit border border-blac ">Shorten URL</button>
+          </div>
+          <button
+            type="submit"
+            className="bg-black/90 hover:bg-gray-500 font-sans font-semibold capitalize text-white p-[13px] w-full sm:w-auto sm:mt-0 mt-4  "
+          >
+            Shorten Url
+          </button>
         </form>
-        {shortUrl && displayShortenedUrl()}
       </div>
+
+      {shortUrl && displayShortenedUrl()}
     </div>
   );
 }

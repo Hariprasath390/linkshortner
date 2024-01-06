@@ -11,7 +11,7 @@ function App() {
       const response = await axios.post("https://deft-kataifi-6406b9.netlify.app/api/url", {
         originalUrl,
       });
-      setShortUrl(response.data.shortUrl);
+      setShortUrl(response.data.shortUrl);  // Corrected line
     } catch (error) {
       console.error(error);
     }

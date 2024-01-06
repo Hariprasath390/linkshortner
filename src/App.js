@@ -8,7 +8,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/url", {
+      const response = await axios.post("http://deft-kataifi-6406b9.netlify.app/api/url", {
         originalUrl,
       });
       setShortUrl(response.data.shortUrl);
@@ -18,7 +18,7 @@ function App() {
   };
 
   const displayShortenedUrl = () => {
-    const fullShortUrl = `http://localhost:5000/${shortUrl}`;
+    const fullShortUrl = `http://deft-kataifi-6406b9.netlify.app/${shortUrl}`;
 
     return (
       <div className="sm:flex block justify-center items-center p-12 gap-3 text-center">

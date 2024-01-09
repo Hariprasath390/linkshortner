@@ -8,17 +8,17 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://deft-kataifi-6406b9.netlify.app/api/url", {
+      const response = await axios.post("http://localhost:5000/api/url", {
         originalUrl,
       });
-      setShortUrl(response.data.shortUrl);  // Corrected line
+      setShortUrl(response.data.shortUrl);
     } catch (error) {
       console.error(error);
     }
   };
 
   const displayShortenedUrl = () => {
-    const fullShortUrl = `https://deft-kataifi-6406b9.netlify.app/${shortUrl}`;
+    const fullShortUrl = `http://localhost:5000/${shortUrl}`;
 
     return (
       <div className="sm:flex block justify-center items-center p-12 gap-3 text-center">

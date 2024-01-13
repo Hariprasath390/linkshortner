@@ -21,8 +21,8 @@ function App() {
     const fullShortUrl = `http://localhost:5000/${shortUrl}`;
 
     return (
-      <div className="sm:flex block justify-center items-center p-12 gap-3 text-center">
-        <p className=" font-bold font-sans text-center p-1">Shortened Url:</p>
+      <div className="sm:flex block justify-center items-center p-12 gap-3 text-center ">
+        <p className=" font-bold font-serif text-center p-1 ">Shortened Url:</p>
         <a href={fullShortUrl} target="_blank" rel="noopener noreferrer">
           {fullShortUrl}
         </a>

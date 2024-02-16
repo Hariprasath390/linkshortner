@@ -46,7 +46,7 @@ function App() {
               htmlFor="originalUrl"
               className="font-semibold font-sans text-black/80 text-center"
             >
-              Original URL:
+              Original URL:&nbsp;
             </label>
             <input
               type="url"
